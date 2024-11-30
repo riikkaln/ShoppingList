@@ -1,0 +1,77 @@
+/* Header */
+.header {
+  display: flex;
+  justify-content: center; /* Keskitetään headerin sisältö */
+  align-items: center; /* Keskitetään pystysuunnassa */
+  position: relative; /* Mahdollistaa hampurilaisvalikon sijoittamisen vasempaan yläkulmaan */
+  padding: 10px 20px; /* Lisää tilaa vasemmalle ja oikealle */
+  background-color: #BA7048; /* Taustaväri */
+  width: 100%; /* Varmistaa, että leveyttä on koko näkymän leveys */
+}
+
+/* Hampurilaisvalikko */
+.hamburger {
+  position: absolute; /* Asetetaan ikoni absoluuttisesti suhteessa headeriin */
+  left: 20px; /* Välimatka vasemmalle */
+  top: 20px; /* Välimatka ylös */
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  z-index: 1001;  /* Pidä hampurilaisvalikko ikoni päällä */
+}
+
+.hamburger .bar {
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Otsikon tyyli */
+.header-title {
+  font-size: 32px;  /* Aseta haluamasi koko */
+  margin: 0;
+  color: white;
+  text-align: center;  /* Keskitetään teksti */
+  z-index: 1000; /* Varmistaa, että otsikko ei mene hampurilaisvalikon päälle */
+}
+
+/* Valikko */
+.menu {
+  position: fixed; /* Kiinnitä valikko koko näyttöön */
+  top: 0;
+  left: 0;
+  height: 100vh; /* 100% näkymän korkeudesta */
+  width: 100vw; /* 100% näkymän leveydestä */
+  background-color: #BA7048;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-100%); /* Piilota valikko alkuun */
+  transition: transform 0.3s ease-in-out; /* Sileä animaatio */
+}
+
+.menu.open {
+  transform: translateX(0); /* Näytä valikko */
+}
+
+/* Valikon linkit */
+.menu li {
+  margin: 20px 0;
+}
+
+.menu li a {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: #ffcc00;
+}
