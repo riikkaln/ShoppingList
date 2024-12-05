@@ -69,8 +69,8 @@ const RecipeForm = () => {
 
         <button type="submit">Tallenna resepti</button>
       </form>
-      </Button>
     </StyledRecipeForm>
+    </Button>
   );
 };
 
