@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import styled from 'styled-components';
+
+const StyledRecipeForm = styled.div`
+background-color: beige;
+`
 
 const RecipeForm = () => {
   const [recipeName, setRecipeName] = useState('');
@@ -27,7 +32,7 @@ const RecipeForm = () => {
   };
 
   return (
-    <div className="recipe-form">
+    <StyledRecipeForm>
       <h2>Lisää uusi resepti</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -63,7 +68,7 @@ const RecipeForm = () => {
 
         <button type="submit">Tallenna resepti</button>
       </form>
-    </div>
+    </StyledRecipeForm>
   );
 };
 
