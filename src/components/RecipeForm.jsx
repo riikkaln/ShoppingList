@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Button from ‘@mui/material/Button’;
 
 const StyledRecipeForm = styled.div`
 background-color: beige;
@@ -68,6 +69,7 @@ const RecipeForm = () => {
 
         <button type="submit">Tallenna resepti</button>
       </form>
+      </Button>
     </StyledRecipeForm>
   );
 };
