@@ -1,9 +1,16 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Button from ‘@mui/material/Button’;
+import Button from '@mui/material/Button';
 
 const StyledRecipeForm = styled.div`
 background-color: beige;
+border-radius: 10px;
+padding: 20px;
+margin: 20px;
+`
+
+const H2 = styled.h2`
+margin: 0px auto 20px auto;
 `
 
 const RecipeForm = () => {
@@ -34,7 +41,7 @@ const RecipeForm = () => {
 
   return (
     <StyledRecipeForm>
-      <h2>Lisää uusi resepti</h2>
+      <H2>Lisää uusi resepti</H2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="recipeName">Reseptin nimi:</label>
@@ -67,10 +74,23 @@ const RecipeForm = () => {
           />
         </div>
 
-        <button type="submit">Tallenna resepti</button>
+        <Button 
+        type="submit" 
+        variant="contained" 
+        color="primary"
+        sx={{
+          backgroundColor: '#235633',
+          '&:hover': {
+          backgroundColor: '#235633',
+          },
+          fontSize: '16px',
+          borderRadius: '8px',
+          }}
+        >
+          Tallenna resepti
+        </Button>
       </form>
     </StyledRecipeForm>
-    </Button>
   );
 };
 

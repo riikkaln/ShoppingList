@@ -23,6 +23,11 @@
   z-index: 1001;  /* Pidä hampurilaisvalikko ikoni päällä */
 }
 
+.recipe-form.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hamburger .bar {
   height: 4px;
   background-color: white;
