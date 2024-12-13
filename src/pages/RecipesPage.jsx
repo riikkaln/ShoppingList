@@ -1,4 +1,5 @@
 import SavedRecipes from '../components/SavedRecipes';
+import styled from 'styled-components';
 
 const RecipesPage = () => {
   return (
