@@ -1,5 +1,4 @@
 import RecipeForm from '../components/RecipeForm';
-import styled from 'styled-components';
 
 const HomePage = () => {
   return (
