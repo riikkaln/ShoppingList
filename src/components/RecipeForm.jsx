@@ -84,7 +84,8 @@ const RecipeForm = () => {
           backgroundColor: '#235633',
           },
           fontSize: '16px',
-          borderRadius: '8px',
+          borderRadius: '30px',
+          textTransform: 'none',
           }}
         >
           Tallenna resepti
