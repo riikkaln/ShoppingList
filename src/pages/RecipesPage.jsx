@@ -1,12 +1,11 @@
-import SavedRecipes from '../components/SavedRecipes';
-import styled from 'styled-components';
+import React from 'react';
+import RecipeList from '../components/RecipeList';
 
-const RecipesPage = () => {
+const RecipesPage = ({ recipes, addToShoppingList }) => {
   return (
     <div>
       <h1>Reseptit</h1>
-      <p>Hallinnoi reseptejäsi täällä.</p>
-      <SavedRecipes />
+      <RecipeList recipes={recipes} addToShoppingList={addToShoppingList} />
     </div>
   );
 };

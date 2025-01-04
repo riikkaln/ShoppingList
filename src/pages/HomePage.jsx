@@ -1,10 +1,11 @@
-import RecipeForm from '../components/RecipeForm';
+import React from 'react';
+import RecipeInput from '../components/RecipeInput';
 
-const HomePage = () => {
+const HomePage = ({ addRecipe }) => {
   return (
     <div>
       <h1>Etusivu</h1>
-      <RecipeForm />
+      <RecipeInput addRecipe={addRecipe} />
     </div>
   );
 };
