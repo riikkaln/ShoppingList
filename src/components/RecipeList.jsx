@@ -18,9 +18,8 @@ const RecipeList = ({ recipes, addToShoppingList }) => {
 
   return (
     <div className="recipe-list">
-      <h2>Reseptit</h2>
       {recipeList.length === 0 ? (
-        <p>Ei reseptejä.</p>
+        <p>Ei tallennettuja reseptejä.</p>
       ) : (
         recipeList.map((recipe, index) => (
           <div key={index} className="recipe">
