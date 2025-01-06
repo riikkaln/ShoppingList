@@ -1,10 +1,24 @@
 import React from 'react';
-import Button from '@mui/material/Button'; // Tuodaan Button MUI:sta
+import styled from 'styled-components';
+import Button from '@mui/material/Button';
+
+const H1 = styled.h1`
+  color: black;
+  font-size: 32px;
+  margin: 0px auto 20px auto;
+`;
+
+const StyledRecipeForm = styled.div`
+  background-color: beige;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+`;
 
 const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingList }) => {
   return (
-    <div>
-      <h2>Ostoslista</h2>
+    <StyledRecipeForm>
+      <H1>Ostoslista</H1>
       {shoppingList.length === 0 ? (
         <p>Ostoslista on tyhjä.</p>
       ) : (
@@ -54,7 +68,7 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
           Tyhjennä ostoslista
         </Button>
       )}
-    </div>
+    </StyledRecipeForm>
   );
 };
 
