@@ -38,7 +38,8 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
                   fontSize: '14px',
                   borderRadius: '30px',
                   textTransform: 'none',
-                  marginLeft: '10px', // Lisää tilaa poisto-painikkeen ja ainesosan väliin
+                  marginLeft: '10px',
+                  fontFamily: "'Source Code Pro', monospace", // Lisää tilaa poisto-painikkeen ja ainesosan väliin
                 }}
                 onClick={() => removeFromShoppingList(item)}
               >
@@ -61,7 +62,8 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
             fontSize: '16px',
             borderRadius: '30px',
             textTransform: 'none',
-            marginTop: '20px', // Lisää hieman tilaa tyhjentämispainikkeen ympärille
+            marginTop: '20px',
+            fontFamily: "'Source Code Pro', monospace",
           }}
           onClick={clearShoppingList}
         >

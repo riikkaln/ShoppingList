@@ -9,7 +9,7 @@ const H1 = styled.h1`
 const HomePage = ({ addRecipe }) => {
   return (
     <div>
-      <H1>Etusivu</H1>
+      <H1>Pidä reseptisi tallessa :)</H1>
       <RecipeInput addRecipe={addRecipe} />
     </div>
   );

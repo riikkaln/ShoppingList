@@ -41,7 +41,8 @@ const RecipeList = ({ recipes, addToShoppingList }) => {
                       fontSize: '16px',
                       borderRadius: '30px',
                       textTransform: 'none',
-                      marginTop: '5px', // Lisätty hieman marginaalia
+                      marginTop: '5px',
+                      fontFamily: "'Source Code Pro', monospace",
                     }}
                     onClick={() => addToShoppingList(ingredient)}
                   >
@@ -62,7 +63,8 @@ const RecipeList = ({ recipes, addToShoppingList }) => {
                 fontSize: '16px',
                 borderRadius: '30px',
                 textTransform: 'none',
-                marginTop: '10px', // Lisätty marginaalia poisto-painikkeelle
+                marginTop: '10px',
+                fontFamily: "'Source Code Pro', monospace",
               }}
               onClick={() => removeRecipe(index)}
             >

@@ -84,6 +84,7 @@ const RecipeInput = ({ addRecipe }) => {
           fontSize: '16px',
           borderRadius: '30px',
           textTransform: 'none',
+          fontFamily: "'Source Code Pro', monospace",
         }}
         onClick={handleAddRecipe}
       >
