@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // Käytetään NavLinkia
 import './NavBar.css';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Toiminto hampurilaisvalikon avaamiseksi ja sulkemiseksi
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -26,9 +27,33 @@ const NavBar = () => {
       {/* Navigaatio */}
       <nav>
         <ul className={`menu ${isOpen ? 'open' : ''}`}>
-          <li><Link to="/" onClick={() => setIsOpen(false)}>Etusivu</Link></li>
-          <li><Link to="/shopping-list" onClick={() => setIsOpen(false)}>Ostoslista</Link></li>
-          <li><Link to="/recipes" onClick={() => setIsOpen(false)}>Reseptit</Link></li>
+          <li>
+            <NavLink
+              to="/"
+              onClick={() => setIsOpen(false)} // Suljetaan valikko, kun linkkiä klikataan
+              className={({ isActive }) => (isActive ? 'active' : '')} // Käytetään isActive-propia
+            >
+              Etusivu
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/shopping-list"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              Ostoslista
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/recipes"
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              Reseptit
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

@@ -37,23 +37,13 @@ const RecipeInput = ({ addRecipe }) => {
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
 
-  // Tämä hook lataa reseptit localStorage:sta sivun latautuessa
-  useEffect(() => {
-    const savedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
-    savedRecipes.forEach((recipe) => addRecipe(recipe));
-  }, [addRecipe]);
-
   const handleAddRecipe = () => {
     if (name && ingredients && instructions) {
       const ingredientArray = ingredients.split(',').map((item) => item.trim());
       const newRecipe = { name, ingredients: ingredientArray, instructions };
 
-      // Lisää resepti App-komponenttiin ja tallentaa localStorageen
+      // Lisää resepti App-komponenttiin
       addRecipe(newRecipe);
-
-      const savedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
-      savedRecipes.push(newRecipe);
-      localStorage.setItem('recipes', JSON.stringify(savedRecipes));
 
       // Tyhjennetään lomake
       setName('');

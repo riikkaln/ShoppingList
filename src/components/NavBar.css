@@ -68,3 +68,9 @@
 .menu li a:hover {
   color: #ffcc00;
 }
+
+/* Aktiivinen linkki */
+a.active {
+  color: #ff5733; /* Esimerkki aktiivisen linkin väristä */
+  font-weight: bold;
+}
