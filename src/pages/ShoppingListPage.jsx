@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const H1 = styled.h1`
   color: black;
@@ -26,24 +28,22 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
           {shoppingList.map((item, index) => (
             <li key={index}>
               {item}{' '}
-              <Button
-                variant="contained"
-                color="secondary"
+              <IconButton
+                aria-label="poista"
+                size="small"
                 sx={{
-                  backgroundColor: '#d32f2f',
                   '&:hover': {
-                    backgroundColor: '#b71c1c',
-                  },
-                  fontSize: '14px',
-                  borderRadius: '30px',
-                  textTransform: 'none',
-                  marginLeft: '10px',
-                  fontFamily: "'Source Code Pro', monospace", // Lisää tilaa poisto-painikkeen ja ainesosan väliin
-                }}
-                onClick={() => removeFromShoppingList(item)}
-              >
-                Poista
-              </Button>
+                  backgroundColor: '#',
+                },
+                fontSize: '15px',
+                borderRadius: '50%',
+                marginLeft: '0px',
+                fontFamily: "'Source Code Pro', monospace",
+             }}
+            onClick={() => removeFromShoppingList(item)}
+          >
+            <DeleteIcon fontSize="small" sx={{ color: 'black' }} />
+          </IconButton>
             </li>
           ))}
         </ul>
