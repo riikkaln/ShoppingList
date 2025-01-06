@@ -26,7 +26,6 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
           {shoppingList.map((item, index) => (
             <li key={index}>
               {item}{' '}
-              {/* Poista ainesosat ostoslistalta */}
               <Button
                 variant="contained"
                 color="secondary"

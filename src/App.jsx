@@ -20,17 +20,32 @@ const App = () => {
     setShoppingList((prevList) => [...prevList, item]);
   };
   
+    // Funktio ainesosan poistamiseen ostoslistalta
+    const removeFromShoppingList = (itemToRemove) => {
+      setShoppingList((prevList) => prevList.filter((item) => item !== itemToRemove));
+    };
+  
+    // Funktio ostoslistan tyhjentämiseen
+    const clearShoppingList = () => {
+      setShoppingList([]);
+    };
 
-  return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage addRecipe={addRecipe} />} />
-        <Route path="/shopping-list" element={<ShoppingListPage shoppingList={shoppingList} />} />
-        <Route path="/recipes" element={<RecipesPage recipes={recipes} addToShoppingList={addToShoppingList} />} />
-      </Routes>
-    </Router>
-  );
-};
-
-export default App;
+    return (
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage addRecipe={addRecipe} />} />
+          <Route
+            path="/shopping-list"
+            element={<ShoppingListPage shoppingList={shoppingList} removeFromShoppingList={removeFromShoppingList} clearShoppingList={clearShoppingList} />}
+          />
+          <Route
+            path="/recipes"
+            element={<RecipesPage recipes={recipes} addToShoppingList={addToShoppingList} />}
+          />
+        </Routes>
+      </Router>
+    );
+  };
+  
+  export default App;

@@ -26,7 +26,7 @@ const ShoppingList = ({ shoppingList }) => {
           </ListItem>
         ))
       ) : (
-        <p>Ostoslista on tyhjä. Lisää resepteistä aineksia!</p>
+        <p>Ostoslista on tyhjä. Aloita lisäämällä aineksia tallentamistasi resepteistä!</p>
       )}
     </ListContainer>
   );

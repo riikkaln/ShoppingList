@@ -14,11 +14,12 @@ h2 {
   padding: 0px auto 20px;
 }
 
-p {
-  color: #FFFFFF;
-}
-
 * {
   box-sizing: border-box;
+}
+
+p {
+  color: black;
+  padding: 20px;
 }
 
