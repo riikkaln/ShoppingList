@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+import CloseIcon from '@mui/icons-material/Close';
 
 const H1 = styled.h1`
   color: black;
@@ -32,17 +32,18 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
                 aria-label="poista"
                 size="small"
                 sx={{
+                  backgroundColor: 'transparent',
                   '&:hover': {
-                  backgroundColor: '#',
-                },
-                fontSize: '15px',
-                borderRadius: '50%',
-                marginLeft: '0px',
-                fontFamily: "'Source Code Pro', monospace",
-             }}
+                  backgroundColor: 'black',
+              },
+              '&:hover svg': {
+              color: 'white',
+            },
+              marginLeft: '10px',
+            }}
             onClick={() => removeFromShoppingList(item)}
           >
-            <DeleteIcon fontSize="small" sx={{ color: 'black' }} />
+            <CloseIcon fontSize="small" sx={{ color: 'black' }} />
           </IconButton>
             </li>
           ))}
