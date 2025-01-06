@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button'; // Import Button
 
-const RecipeList = ({ recipes, addToShoppingList }) => {
-  // Alustetaan tila resepteille
-  const [recipeList, setRecipeList] = useState(recipes);
+const RecipeList = ({ addToShoppingList }) => {
+  // Alustetaan tila resepteille, ladataan reseptit localStorage:sta
+  const [recipeList, setRecipeList] = useState(() => {
+    const savedRecipes = localStorage.getItem('recipes');
+    return savedRecipes ? JSON.parse(savedRecipes) : [];
+  });
 
   // Poistetaan resepti ja päivitetään localStorage
   const removeRecipe = (index) => {
@@ -13,6 +16,7 @@ const RecipeList = ({ recipes, addToShoppingList }) => {
   };
 
   useEffect(() => {
+    // Tallennetaan reseptit aina kun lista muuttuu
     localStorage.setItem('recipes', JSON.stringify(recipeList));
   }, [recipeList]);
 
