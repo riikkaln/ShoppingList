@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button'; // Tuodaan Button MUI:sta
 
 const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingList }) => {
   return (
@@ -11,13 +12,47 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
           {shoppingList.map((item, index) => (
             <li key={index}>
               {item}{' '}
-              <button onClick={() => removeFromShoppingList(item)}>Poista</button>
+              {/* Poista ainesosat ostoslistalta */}
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{
+                  backgroundColor: '#d32f2f',
+                  '&:hover': {
+                    backgroundColor: '#b71c1c',
+                  },
+                  fontSize: '14px',
+                  borderRadius: '30px',
+                  textTransform: 'none',
+                  marginLeft: '10px', // Lisää tilaa poisto-painikkeen ja ainesosan väliin
+                }}
+                onClick={() => removeFromShoppingList(item)}
+              >
+                Poista
+              </Button>
             </li>
           ))}
         </ul>
       )}
+
       {shoppingList.length > 0 && (
-        <button onClick={clearShoppingList}>Tyhjennä ostoslista</button>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            backgroundColor: '#235633',
+            '&:hover': {
+              backgroundColor: '#1d4d29',
+            },
+            fontSize: '16px',
+            borderRadius: '30px',
+            textTransform: 'none',
+            marginTop: '20px', // Lisää hieman tilaa tyhjentämispainikkeen ympärille
+          }}
+          onClick={clearShoppingList}
+        >
+          Tyhjennä ostoslista
+        </Button>
       )}
     </div>
   );
