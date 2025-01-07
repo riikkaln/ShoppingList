@@ -30,6 +30,14 @@ const App = () => {
       setShoppingList([]);
     };
 
+    const removeRecipe = (index) => {
+      setRecipes((prevRecipes) => {
+        const updatedRecipes = prevRecipes.filter((_, idx) => idx !== index);
+        localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
+        return updatedRecipes;
+      });
+    };
+
     return (
       <Router>
         <NavBar />
@@ -41,7 +49,7 @@ const App = () => {
           />
           <Route
             path="/recipes"
-            element={<RecipesPage recipes={recipes} addToShoppingList={addToShoppingList} />}
+            element={<RecipesPage recipes={recipes} addToShoppingList={addToShoppingList} removeRecipe={removeRecipe} />}
           />
         </Routes>
       </Router>

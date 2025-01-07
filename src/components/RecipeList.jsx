@@ -1,33 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import Button from '@mui/material/Button'; // Import Button
+import React from 'react';
+import Button from '@mui/material/Button';
+import styled from 'styled-components';
 
-const RecipeList = ({ addToShoppingList }) => {
-  // Alustetaan tila resepteille, ladataan reseptit localStorage:sta
-  const [recipeList, setRecipeList] = useState(() => {
-    const savedRecipes = localStorage.getItem('recipes');
-    return savedRecipes ? JSON.parse(savedRecipes) : [];
-  });
+const H3 = styled.h3`
+  padding: 20px;
+`;
 
-  // Poistetaan resepti ja päivitetään localStorage
-  const removeRecipe = (index) => {
-    const updatedRecipes = recipeList.filter((_, idx) => idx !== index);
-    setRecipeList(updatedRecipes); // Päivitetään tila
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes)); // Tallennetaan localStorageen
-  };
-
-  useEffect(() => {
-    // Tallennetaan reseptit aina kun lista muuttuu
-    localStorage.setItem('recipes', JSON.stringify(recipeList));
-  }, [recipeList]);
-
+const RecipeList = ({ recipes, addToShoppingList, removeRecipe }) => {
   return (
     <div className="recipe-list">
-      {recipeList.length === 0 ? (
+      {recipes.length === 0 ? (
         <p>Ei tallennettuja reseptejä.</p>
       ) : (
-        recipeList.map((recipe, index) => (
+        recipes.map((recipe, index) => (
           <div key={index} className="recipe">
-            <h3>{recipe.name}</h3>
+            <H3>{recipe.name}</H3>
             <p><strong>Ohjeet:</strong> {recipe.instructions}</p>
             <ul>
               {recipe.ingredients.map((ingredient, idx) => (
@@ -54,7 +41,6 @@ const RecipeList = ({ addToShoppingList }) => {
                 </li>
               ))}
             </ul>
-            {/* Poisto-painike reseptille */}
             <Button
               variant="contained"
               color="secondary"

@@ -15,11 +15,11 @@ const H1 = styled.h1`
   margin: 0px auto 20px auto;
 `;
 
-const RecipesPage = ({ recipes, addToShoppingList }) => {
+const RecipesPage = ({ recipes, addToShoppingList, removeRecipe }) => {
   return (
     <RecipeContainer>
       <H1>Reseptit</H1>
-      <RecipeList recipes={recipes} addToShoppingList={addToShoppingList} />
+      <RecipeList recipes={recipes} addToShoppingList={addToShoppingList} removeRecipe={removeRecipe} />
     </RecipeContainer>
   );
 };

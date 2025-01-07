@@ -20,6 +20,7 @@ const Input = styled.input`
   margin-bottom: 15px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-family: 'Source Code Pro', monospace;
 `;
 
 const Textarea = styled.textarea`
