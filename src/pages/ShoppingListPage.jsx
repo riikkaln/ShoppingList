@@ -92,6 +92,7 @@ const ShoppingListPage = ({ shoppingList, removeFromShoppingList, clearShoppingL
             borderRadius: '30px',
             textTransform: 'none',
             marginTop: '20px',
+            fontFamily: 'Source Code Pro, monospace',
           }}
           onClick={clearShoppingList}
         >
